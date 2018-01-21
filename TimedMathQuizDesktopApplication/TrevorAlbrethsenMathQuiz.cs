@@ -42,6 +42,7 @@ namespace TimedMathQuizDesktopApplication
         private void StartButton_Click(object sender, EventArgs e)
         {
             StartQuiz();
+            StartButton.Enabled = false;
         }
 
         private void StartQuiz()
@@ -92,6 +93,7 @@ namespace TimedMathQuizDesktopApplication
                 }
                 MessageBox.Show("You got all the answers right!",
                                 "Congratulations!");
+                StartButton.Enabled = true;
             }
             else if (timeLeft > 0)
             {
@@ -108,6 +110,7 @@ namespace TimedMathQuizDesktopApplication
                 TimeLeftLabel.Text = "Time's up!!";
                 MessageBox.Show("You didn't finish in time!",
                                 "Sorry!");
+                StartButton.Enabled = true;
             }
         }
 
@@ -120,12 +123,31 @@ namespace TimedMathQuizDesktopApplication
                 return true;
             else
                 return false;
+        }
+
+            private void label1_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Sum_ValueChanged(object sender, EventArgs e)
         {
+            if (plusLeft + plusRight == Sum.Value) System.Media.SystemSounds.Asterisk.Play();
+        }
 
+        private void Sub_ValueChanged(object sender, EventArgs e)
+        {
+            if (minusLeft - minusRight == Sub.Value) System.Media.SystemSounds.Asterisk.Play();
+        }
+
+        private void Mul_ValueChanged(object sender, EventArgs e)
+        {
+            if (timesLeft * timesRight == Mul.Value) System.Media.SystemSounds.Asterisk.Play();
+        }
+
+        private void Div_ValueChanged(object sender, EventArgs e)
+        {
+            if (divisionLeft / divisionRight == Div.Value) System.Media.SystemSounds.Asterisk.Play();
         }
     }
 }

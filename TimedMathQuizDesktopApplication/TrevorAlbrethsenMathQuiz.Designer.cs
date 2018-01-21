@@ -224,10 +224,12 @@
             // Sum
             // 
             this.Sum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.Sum.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Sum.Location = new System.Drawing.Point(620, 180);
             this.Sum.Name = "Sum";
             this.Sum.Size = new System.Drawing.Size(120, 62);
             this.Sum.TabIndex = 16;
+            this.Sum.ValueChanged += new System.EventHandler(this.Sum_ValueChanged);
             // 
             // Sub
             // 
@@ -236,6 +238,7 @@
             this.Sub.Name = "Sub";
             this.Sub.Size = new System.Drawing.Size(120, 62);
             this.Sub.TabIndex = 17;
+            this.Sub.ValueChanged += new System.EventHandler(this.Sub_ValueChanged);
             // 
             // Mul
             // 
@@ -244,6 +247,7 @@
             this.Mul.Name = "Mul";
             this.Mul.Size = new System.Drawing.Size(120, 62);
             this.Mul.TabIndex = 18;
+            this.Mul.ValueChanged += new System.EventHandler(this.Mul_ValueChanged);
             // 
             // Div
             // 
@@ -252,6 +256,7 @@
             this.Div.Name = "Div";
             this.Div.Size = new System.Drawing.Size(120, 62);
             this.Div.TabIndex = 19;
+            this.Div.ValueChanged += new System.EventHandler(this.Div_ValueChanged);
             // 
             // label17
             // 
